@@ -1,3 +1,6 @@
 [submodule "glog"]
 	path = glog
 	url = https://github.com/willyd/glog.git
+[submodule "gflags"]
+	path = gflags
+	url = https://github.com/gflags/gflags
