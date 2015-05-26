@@ -1,0 +1,3 @@
+[submodule "glog"]
+	path = glog
+	url = https://github.com/willyd/glog.git
