@@ -7,3 +7,12 @@
 [submodule "protobuf"]
 	path = protobuf
 	url = https://github.com/willyd/protobuf.git
+[submodule "leveldb"]
+	path = leveldb
+	url = https://github.com/willyd/leveldb
+[submodule "lmdb"]
+	path = lmdb
+	url = https://github.com/willyd/lmdb
+[submodule "snappy"]
+	path = snappy
+	url = https://github.com/willyd/snappy.git
