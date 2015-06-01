@@ -1,26 +1,32 @@
-set(BOOST_INCLUDEDIR @Boost_INCLUDE_DIRS@ CACHE PATH "Boost include directory")
-set(BOOST_LIBRARYDIR @Boost_LIBRARY_DIRS@ CACHE PATH "Boost library directory")
+set(BOOST_INCLUDEDIR             "@Boost_INCLUDE_DIRS@"           CACHE PATH "Boost include directory")
+set(BOOST_LIBRARYDIR             "@Boost_LIBRARY_DIRS@"           CACHE PATH "Boost library directory")
+                                                                  
+set(GFLAGS_DIR                   "@GFLAGS_DIR@"                   CACHE PATH "gflags library directory")
+set(gflags_DIR                   "${GFLAGS_DIR}"                  CACHE PATH "gflags library directory")
+set(Gflags_DIR                   "${GFLAGS_DIR}"                  CACHE PATH "gflags library directory")
+                                                                  
+set(GLOG_INCLUDE_DIR             "@GLOG_INCLUDE_DIR@"             CACHE PATH "glog library include directory")
+set(GLOG_LIBRARY_RELEASE         "@GLOG_LIBRARY_RELEASE@"         CACHE PATH "glog release library")
+set(GLOG_LIBRARY_DEBUG           "@GLOG_LIBRARY_DEBUG@"           CACHE PATH "glog debug library")
+       
+set(PROTOBUF_SRC_ROOT_FOLDER     "@PROTOBUF_SRC_ROOT_FOLDER@"     CACHE PATH "protobuf library root")
 
-set(GFLAGS_DIR @GFLAGS_DIR@ CACHE PATH "gflags library directory")
-set(gflags_DIR ${GFLAGS_DIR} CACHE PATH "gflags library directory")
-set(Gflags_DIR ${GFLAGS_DIR} CACHE PATH "gflags library directory")
+set(HDF5_HL_INCLUDE_DIR          "@HDF5_HL_INCLUDE_DIR@"          CACHE PATH "hdf5 hl include dir")
+set(HDF5_hdf5_LIBRARY_RELEASE    "@HDF5_hdf5_LIBRARY_RELEASE@"    CACHE PATH "hdf5 library")
+set(HDF5_hdf5_hl_LIBRARY_RELEASE "@HDF5_hdf5_hl_LIBRARY_RELEASE@" CACHE PATH "hdf5 hl library")
+set(HDF5_hdf5_LIBRARY_DEBUG      "@HDF5_hdf5_LIBRARY_DEBUG@"      CACHE PATH "hdf5 library")
+set(HDF5_hdf5_hl_LIBRARY_DEBUG   "@HDF5_hdf5_hl_LIBRARY_DEBUG@"   CACHE PATH "hdf5 hl library")
 
-set(GLOG_INCLUDE_DIR @GLOG_INCLUDE_DIR@ CACHE PATH "glog library include directory")
-set(GLOG_LIBRARY_RELEASE @GLOG_LIBRARY_RELEASE@ CACHE PATH "glog release library")
-set(GLOG_LIBRARY_DEBUG @GLOG_LIBRARY_DEBUG@ CACHE PATH "glog debug library")
+set(LMDB_DIR                     "@LMDB_DIR@"                     CACHE PATH "lmdb library root")
 
-set(PROTOBUF_SRC_ROOT_FOLDER @PROTOBUF_SRC_ROOT_FOLDER@ CACHE PATH "protobuf library root")
+set(LEVELDB_ROOT                 "@LEVELDB_ROOT@"                  CACHE PATH "leveldb library root")
 
-# todo hdf5
+set(SNAPPY_ROOT_DIR              "@SNAPPY_ROOT_DIR@"              CACHE PATH "snappy library root")
 
-set(LMDB_DIR @LMDB_DIR@ CACHE PATH "lmdb library root")
+set(BLAS                         "Open"                           CACHE STRING "Selected BLAS library")
+set(OpenBLAS_INCLUDE_DIR         "@OpenBLAS_INCLUDE_DIR@"         CACHE PATH "openblas include dir")
+set(OpenBLAS_LIB                 "@OpenBLAS_LIB@"                 CACHE PATH "openblas lib")
 
-set(LEVELDB_DIR @LEVELDB_DIR@ CACHE PATH "leveldb library root")
+set(OpenCV_DIR                   "@OpenCV_DIR@"                   CACHE PATH "opencv root dir")
 
-set(SNAPPY_ROOT_DIR @SNAPPY_ROOT_DIR@ CACHE PATH "snappy library root")
-
-set(BLAS "Open" CACHE STRING "Selected BLAS library")
-set(OpenBLAS_INCLUDE_DIR @OpenBLAS_INCLUDE_DIR@ CACHE PATH "openblas include dir")
-set(OpenBLAS_LIB @OpenBLAS_LIB@ CACHE PATH "openblas lib")
-
-set(BUILD_SHARED_LIBS OFF CACHE BOOL "Force building static libs on windows")
+set(BUILD_SHARED_LIBS            OFF                              CACHE BOOL "Force building static libs on windows")

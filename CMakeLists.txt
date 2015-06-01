@@ -6,7 +6,7 @@ project(caffe-windows-dependencies)
 
 include (ExternalProject)
 
-find_package(Boost 1.55 REQUIRED COMPONENTS system thread filesystem)
+find_package(Boost 1.55 REQUIRED COMPONENTS system thread filesystem date_time)
 
 # gflags
 set (GFLAGS_CMAKE_ARGS 
@@ -71,7 +71,7 @@ ExternalProject_Add ( leveldb
                       CMAKE_ARGS ${LEVELDB_CMAKE_ARGS}
                     )
 
-set(LEVELB_DIR ${CMAKE_INSTALL_PREFIX}/leveldb)
+set(LEVELDB_ROOT ${CMAKE_INSTALL_PREFIX}/leveldb)
 
 set (LMDB_CMAKE_ARGS 
      -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}/lmdb # set the install prefix per generator     
@@ -100,8 +100,6 @@ ExternalProject_Add ( snappy
 
 set(SNAPPY_ROOT_DIR ${CMAKE_INSTALL_PREFIX}/snappy)
 
-
-# todo opencv
 find_package(OpenCV QUIET COMPONENTS core highgui imgproc imgcodecs)
 if(NOT OpenCV_FOUND) # if not OpenCV 3.x, then imgcodecs are not found
   find_package(OpenCV REQUIRED COMPONENTS core highgui imgproc)
@@ -109,10 +107,10 @@ endif()
 
 find_package(HDF5 REQUIRED COMPONENTS HL)
 
-set(OpenBLAS_INCLUDE_DIR "" CACHE PATH "OpenBLAS include dir")
-set(OpenBLAS_LIB "" CACHE FILEPATH "OpenBLAS lib")
+set(OpenBLAS_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/openblas/include" CACHE PATH "OpenBLAS include dir")
+set(OpenBLAS_LIB "${CMAKE_CURRENT_SOURCE_DIR}/openblas/lib/libopenblas.dll.a" CACHE FILEPATH "OpenBLAS lib")
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/caffe-cache-init.cmakein ${CMAKE_INSTALL_PREFIX}/caffe-cache-init.cmake)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/caffe-cache-init.cmakein ${CMAKE_INSTALL_PREFIX}/caffe-cache-init.cmake @ONLY)
 
 
 
