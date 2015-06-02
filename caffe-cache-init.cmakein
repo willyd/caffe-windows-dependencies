@@ -4,6 +4,7 @@ set(BOOST_LIBRARYDIR             "@Boost_LIBRARY_DIRS@"           CACHE PATH "Bo
 set(GFLAGS_DIR                   "@GFLAGS_DIR@"                   CACHE PATH "gflags library directory")
 set(gflags_DIR                   "${GFLAGS_DIR}"                  CACHE PATH "gflags library directory")
 set(Gflags_DIR                   "${GFLAGS_DIR}"                  CACHE PATH "gflags library directory")
+set(gflags_SHARED                OFF                              CACHE PATH "use static gflags library")
                                                                   
 set(GLOG_INCLUDE_DIR             "@GLOG_INCLUDE_DIR@"             CACHE PATH "glog library include directory")
 set(GLOG_LIBRARY_RELEASE         "@GLOG_LIBRARY_RELEASE@"         CACHE PATH "glog release library")
