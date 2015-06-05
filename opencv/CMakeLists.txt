@@ -8,19 +8,27 @@ if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${extproject_FILE}")
 	set(extproject_URL "${CMAKE_CURRENT_SOURCE_DIR}/${extproject_FILE}")
 endif()
 
+set(OpenCV_CMAKE_ARGS 
+	-DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}/${extproject_name}					
+	-DBUILD_DOCS=OFF
+	-DBUILD_TESTS=OFF
+	-DBUILD_PERF_TESTS=OFF
+	-DBUILD_PACKAGE=OFF
+	-DBUILD_WITH_STATIC_CRT=OFF
+	-DBUILD_opencv_apps=OFF
+	-DBUILD_opencv_gpu=OFF
+	-DBUILD_opencv_python=OFF
+	-DBUILD_opencv_ts=OFF
+	-DWITH_CUDA=OFF
+	)
+set(OpenCV_STATIC ON CACHE BOOL "Use static opencv libs")
+if(OpenCV_STATIC)
+	set(OpenCV_CMAKE_ARGS ${OpenCV_CMAKE_ARGS} -DBUILD_SHARED_LIBS=OFF)
+else()
+	set(OpenCV_CMAKE_ARGS ${OpenCV_CMAKE_ARGS} -DBUILD_SHARED_LIBS=ON)
+endif()
+
 externalproject_add( ${extproject_name} 
 					URL ${extproject_URL}							
-					CMAKE_ARGS 
-					-DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}/${extproject_name}
-					-DBUILD_SHARED_LIBS=OFF					
-					-DBUILD_DOCS=OFF
-					-DBUILD_TESTS=OFF
-					-DBUILD_PERF_TESTS=OFF
-					-DBUILD_PACKAGE=OFF
-					-DBUILD_WITH_STATIC_CRT=OFF
-					-DBUILD_opencv_apps=OFF
-					-DBUILD_opencv_gpu=OFF
-					-DBUILD_opencv_python=OFF
-					-DBUILD_opencv_ts=OFF
-					-DWITH_CUDA=OFF
+					CMAKE_ARGS ${OpenCV_CMAKE_ARGS}					
 					)

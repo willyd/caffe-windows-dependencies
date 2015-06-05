@@ -6,11 +6,12 @@ This project sets up a super build of most of the [Caffe](https://github.com/BVL
 * lmdb
 * protobuf
 * snappy
+* opencv
+* hdf5
 
 It does not build the following dependencies:
 * boost
-* opencv
-* hdf5
+
 
 Windows binaries for these dependencies are widely available. Please note that boost is required to build the windows version of leveldb.
 

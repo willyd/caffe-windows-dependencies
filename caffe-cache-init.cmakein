@@ -29,5 +29,6 @@ set(OpenBLAS_INCLUDE_DIR         "@OpenBLAS_INCLUDE_DIR@"         CACHE PATH "op
 set(OpenBLAS_LIB                 "@OpenBLAS_LIB@"                 CACHE PATH "openblas lib")
 
 set(OpenCV_DIR                   "@OpenCV_DIR@"                   CACHE PATH "opencv root dir")
+set(OpenCV_STATIC                "@OpenCV_STATIC@"                CACHE PATH "opencv static")
 
 set(BUILD_SHARED_LIBS            OFF                              CACHE BOOL "Force building static libs on windows")
