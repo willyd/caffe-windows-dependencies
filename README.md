@@ -1,3 +1,6 @@
+### Deprecated
+Use https://github.com/willyd/caffe-builder instead.
+
 # caffe-windows-dependencies
 This project sets up a super build of most of the [Caffe](https://github.com/BVLC/caffe) library dependencies on Windows. The dependencies built by this project are:
 * gflags
